@@ -1,3 +1,4 @@
+/* 게임 페이지 스타일 */
 * {
   margin: 0;
   padding: 0;
@@ -12,6 +13,7 @@ body {
   justify-content: center;
   align-items: center;
   color: #fff;
+  padding: 20px;
 }
 
 .game-container {
@@ -19,8 +21,22 @@ body {
   border-radius: 24px;
   padding: 24px;
   max-width: 500px;
-  width: 95%;
+  width: 100%;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.home-link {
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  opacity: 0.8;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  transition: opacity 0.3s;
+}
+
+.home-link:hover {
+  opacity: 1;
 }
 
 .game-header {
@@ -48,6 +64,7 @@ body {
   display: flex;
   justify-content: center;
   gap: 24px;
+  flex-wrap: wrap;
 }
 
 .stat {
@@ -212,6 +229,30 @@ body {
   box-shadow: 0 6px 16px rgba(231, 76, 60, 0.5);
 }
 
+.end-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.home-btn {
+  display: inline-block;
+  padding: 14px 32px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  transition: all 0.2s;
+}
+
+.home-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
 .final-score {
   font-size: 1.5rem;
   font-weight: 700;
@@ -248,5 +289,30 @@ body {
   100% {
     transform: translate(-50%, -50%) scale(1);
     opacity: 1;
+  }
+}
+
+/* 반응형 */
+@media (max-width: 480px) {
+  .game-container {
+    padding: 16px;
+  }
+
+  .stats {
+    gap: 12px;
+  }
+
+  .stat {
+    min-width: 60px;
+    padding: 6px 12px;
+  }
+
+  .end-buttons {
+    flex-direction: column;
+  }
+
+  .home-btn,
+  .start-btn {
+    width: 100%;
   }
 }
